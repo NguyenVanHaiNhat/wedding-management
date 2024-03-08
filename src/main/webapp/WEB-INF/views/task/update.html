@@ -13,6 +13,7 @@
 <div id="form">
     <form th:action="@{/tasks/update/{id}(id=${tasks.getId_Task()})}" th:object="${tasks}"
           method="POST" novalidate="novalidate">
+        <input type="hidden" th:field="*{id_Task}"/>
         <div>
             <label for="nameTask">Name Task</label>
             <input type="text" id="nameTask" th:field="*{nameTask}"/>
