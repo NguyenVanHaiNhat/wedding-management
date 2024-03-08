@@ -1,5 +1,6 @@
 package org.example.weddingmanagement.service.impl;
 
+import org.example.weddingmanagement.model.DTO.Statistical;
 import org.example.weddingmanagement.model.entity.Category;
 import org.example.weddingmanagement.repository.ICategoryRepository;
 import org.example.weddingmanagement.service.ICategoryService;
@@ -29,5 +30,10 @@ public class CategoryService implements ICategoryService {
     @Override
     public void remove(Long id) {
         iCategoryRepository.deleteById(id);
+    }
+
+    @Override
+    public Iterable<Statistical> statistical() {
+        return iCategoryRepository.statistical();
     }
 }
